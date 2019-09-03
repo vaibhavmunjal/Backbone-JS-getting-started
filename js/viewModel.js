@@ -49,8 +49,10 @@ let collView = Backbone.View.extend({
         let self = this;
         this.model.each((song) =>{
             let songView = new SongViews({model: song});
-            self.$el.append(songView.render().$el);
+            this.$el.append(songView.render().$el);
+            // self.$el.append(songView.render().$el);
         });
+        return this;
     }
 });
 
